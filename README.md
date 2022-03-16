@@ -1,2 +1,4 @@
 # dotFiles
-My dotFiles
+- Kitty
+- vim
+- oh-my-zsh

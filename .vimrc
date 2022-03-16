@@ -172,8 +172,12 @@ endif
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/seoul256.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'raimondi/delimitmate'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

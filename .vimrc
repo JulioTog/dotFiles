@@ -2,6 +2,46 @@
 " Maintainer: Tim Pope <http://tpo.pe/>
 " Version: 1.2
 
+set nocompatible
+
+" ------------
+" Environment
+" ------------
+
+"Encoding
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+set ttyfast
+
+" Tabs. May be overridden by autocmd rules
+set tabstop=4
+set softtabstop=0
+set shiftwidth=4
+set expandtab
+
+" Map leader to ,
+let mapleader=','
+
+"Enable hidden buffers
+set hidden
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+silent function! OSX()
+	return has('macunix')
+endfunction
+silent function! LINUX()
+	return has('unix') && !has('macunix') && !has('win32unix')
+endfunction
+silent function! WINDOWS()
+	return (has('win32') || has('win64'))
+endfunction
+
 if exists('g:loaded_sensible') || &compatible
 finish
 else
@@ -28,7 +68,7 @@ set ttimeout
 set ttimeoutlen=100
 endif
 
-set incsearch
+
 " Use <C-L\ to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>

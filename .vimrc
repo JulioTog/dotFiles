@@ -67,7 +67,7 @@ else
 endif
 endfunction
 
-inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+"inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 						
 						
 if exists('g:loaded_sensible') || &compatible
@@ -166,6 +166,8 @@ inoremap <C-W> <C-G>u<C-W>
 endif
 
 " vim:set ft=vim et sw=2
+" set update time for gitgutter
+set updatetime=100
 
 " Auto install Plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -184,6 +186,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'raimondi/delimitmate'
+Plug 'airblade/vim-gitgutter'
+Plug 'lifepillar/vim-mucomplete'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

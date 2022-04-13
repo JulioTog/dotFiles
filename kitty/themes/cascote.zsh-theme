@@ -48,7 +48,7 @@ PR_THIRD="%{$FG[120]%}"
 PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
 # Modify Git prompt
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" on ${PR_SECOND}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
@@ -119,7 +119,7 @@ ${PR_HBAR}\
 # display exitcode on the right when > 0
 return_code="%(?..%{$fg[red]%}%? ↵ %{$reset_color%})"
 RPROMPT=' $return_code${PR_PRINCIPAL}${PR_HBAR}${PR_PRINCIPAL}${PR_HBAR}\
-(${PR_THIRD}%D{%a,%b%d}${PR_PRINCIPAL})${PR_HBAR}${PR_PRINCIPAL}${PR_LRCORNER}${PR_NO_COLOUR}'
+(${PR_THIRD}%D{%a,%b%d}${PR_PRINCIPAL})${PR_HBAR}${PR_HBAR}${PR_HBAR}${PR_PRINCIPAL}${PR_LRCORNER}${PR_NO_COLOUR}'
 
 PS2='%{fg[009]%}${PR_HBAR}\
 %{$fg[009]%}${PR_HBAR}(\

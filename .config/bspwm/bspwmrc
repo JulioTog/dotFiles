@@ -52,5 +52,12 @@ bspc rule -a mpv             desktop='^7' follow=on  state=tiled            cent
 bspc rule -a feh             desktop='^7' follow=on  state=tiled            center=on
 bspc rule -a qBittorrent     desktop='^9' follow=on  state=floating         center=on  rectangle=1200x650+0+0
 
+
+##### autostart screens
+killall -qw tty-clock
+killall -qw btm
+bspc rule -a *:*:clock -o desktop ='^4' state=floating rectangle=500x260+2918+441  && alacritty -t clock  -e tty-clock -s -c -C 5 &
+bspc rule -a *:*:neofetch -o desktop ='^4' state=floating rectangle=600x260+0+0 && alacritty -t neofetch -e neofetch --loop &
+bspc rule -a *:*:BTM -o desktop ='^4' state floating rectangle=908x491+1928+878 && alacritty -t BTM -e  btm &
 ##### autostart scripts
 $HOME/.local/bin/bspwm/startup.sh &

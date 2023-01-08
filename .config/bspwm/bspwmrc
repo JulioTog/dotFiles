@@ -43,21 +43,15 @@ bspc config external_rules_command "$HOME/.local/bin/bspwm/external-rules.sh"
 # The `state` field specifies the initial state of the program (e.g., floating, tiled, pseudo_tiled).
 # The `rectangle` field specifies the size and position of the program when it is opened.
 bspc rule -a Code            desktop='^1' follow=on  center=on
-bspc rule -a Spotify         desktop='^2' follow=off state=pseudo_tiled     center=on 
-bspc rule -a firefox         desktop='^3' follow=off center=off
-bspc rule -a TelegramDesktop desktop='^4' follow=off center=on
-bspc rule -a obs             desktop='^5' follow=off state=floating         center=on
+bspc rule -a Spotify         desktop='^9' follow=off state=pseudo_tiled     center=on 
+bspc rule -a firefox         desktop='^5' follow=off center=off
+bspc rule -a TelegramDesktop desktop='^8' follow=off center=on
 bspc rule -a Thunar          desktop='^6' follow=on                                    rectangle=1300x800+0+0
 bspc rule -a mpv             desktop='^7' follow=on  state=tiled            center=on 
 bspc rule -a feh             desktop='^7' follow=on  state=tiled            center=on
-bspc rule -a qBittorrent     desktop='^9' follow=on  state=floating         center=on  rectangle=1200x650+0+0
-
-
+bspc rule -a *:*:clock -o    desktop='^4' state=floating rectangle=500x260+2918+441 
+bspc rule -a *:*:neofetch -o desktop='^4' state=floating rectangle=600x260+0+0
+bspc rule -a *:*:BTM -o      desktop='^4' state=floating rectangle=908x491+1928+878
 ##### autostart screens
-killall -qw tty-clock
-killall -qw btm
-bspc rule -a *:*:clock -o desktop ='^4' state=floating rectangle=500x260+2918+441  && alacritty -t clock  -e tty-clock -s -c -C 5 &
-bspc rule -a *:*:neofetch -o desktop ='^4' state=floating rectangle=600x260+0+0 && alacritty -t neofetch -e neofetch --loop &
-bspc rule -a *:*:BTM -o desktop ='^4' state floating rectangle=908x491+1928+878 && alacritty -t BTM -e  btm &
 ##### autostart scripts
 $HOME/.local/bin/bspwm/startup.sh &

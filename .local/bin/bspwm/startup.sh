@@ -10,7 +10,8 @@ pgerp -x dunst         2> /dev/null || dunst        &
 pgerp -x sxhkd         2> /dev/null || sxhkd        &
 pgrep -x greenclip     2> /dev/null || greenclip daemon &
 pgrep -x picom         2> /dev/null || picom --experimental-backends &
-neofetch &
+pgrep -x btm           2> /dev/null || /bin/alacritty -t BTM -e  btm &
+pgerp -x tty-clock     2> /dev/null ||/bin/alacritty -t clock  -e tty-clock -s -c -C 5 &
 
 xrandr                --output eDP --mode 1920x1200
 feh                   --bg-fill ~/.wallpapers/29.png & 

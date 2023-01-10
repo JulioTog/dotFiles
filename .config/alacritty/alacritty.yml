@@ -26,7 +26,7 @@ font:
   bold_italic:
     family: JetBrainsMono
     style: Bold Italic
-  size: 8.0
+  size: 8.5
 
 # The `window` field allows you to configure various aspects of the terminal window.
 # The `startup_mode` field specifies whether the terminal should start in windowed mode or fullscreen mode.

@@ -13,7 +13,7 @@ pgrep -x picom         2> /dev/null || picom --experimental-backends &
 pgrep -x btm           2> /dev/null || /bin/alacritty -t BTM -e  btm &
 pgrep -x tty-clock     2> /dev/null || /bin/alacritty -t clock  -e tty-clock -s -c -C 5 &
 
-xrandr                --output eDP --mode 1920x1200
+#xrandr                --output eDP --mode 1920x1200
 feh                   --bg-fill ~/.wallpapers/34.png & 
 # brightnessctl         -q s 4
 redshift              -P -O 4500 &
